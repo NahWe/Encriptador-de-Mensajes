@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
         return regex.test(texto);
     }
 
-    function btnEncriptarHandler() {
+    function btnEncriptarHandler(event) {
+        event.preventDefault(); // Prevenir el comportamiento por defecto del botón
         const texto = textArea.value.trim(); // Elimina los espacios en blanco al inicio y al final
         if (texto === "") {
             alert("Por favor, ingrese un texto para encriptar.");
@@ -37,7 +38,8 @@ document.addEventListener("DOMContentLoaded", function() {
         botonCopiar.classList.remove("btnOcultar"); // Mostrar botón copiar
     }
 
-    function btnDesencriptarHandler() {
+    function btnDesencriptarHandler(event) {
+        event.preventDefault(); // Prevenir el comportamiento por defecto del botón
         const texto = textArea.value.trim(); // Elimina los espacios en blanco al inicio y al final
         if (texto === "") {
             alert("Por favor, ingrese un texto para desencriptar.");
