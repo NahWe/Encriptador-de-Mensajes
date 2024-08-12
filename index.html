@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <title>Encriptador</title>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <img src="./assets/img/Logo.png" alt="logo de Alura" class="logo">
+        </div>
+    </header>
+    <main>
+        <div class="main">
+            <section class="left">
+                <form action="">
+                    <textarea class="text-area input" cols="30" rows="10" placeholder="Ingrese el texto que desea encriptar o desencriptar aqui "></textarea>
+                </form>
+                <div>
+                    <span class="infomacion">
+                        <img src="./assets/img/exclamacion.svg" alt="alert icon" />
+                        Solo letras minúsculas y sin acentos
+                    </span>
+                    <div class="buttons">
+                        <button class="btn-encriptar" onclick="btnEncriptar()">Encriptar</button>
+                        <button class="btn-desencriptar" onclick="btnDesencriptar()">Desencriptar</button>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="right">
+                <img src="./assets/img/Muñeco.png" alt="Muneco Imagen" class="imagenMuneco">
+                <div class="mensajeResult">
+                    <h3 class="titleResult">Ningun mensaje fue encontrado</h3>
+                    <textarea class="mensaje" cols="20" rows="10"></textarea>
+                </div>
+                <div class="button">
+                    <button class="copiar btnOcultar" onclick="copiarAlPortapapeles()">Copiar</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="/scrip.js"> </script>
+</body>
+
+</html>
