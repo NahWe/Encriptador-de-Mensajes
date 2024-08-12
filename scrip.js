@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function() {
     const textArea = document.querySelector(".text-area");
     const mensaje = document.querySelector(".mensaje");
     const botonCopiar = document.querySelector(".copiar");
@@ -68,12 +69,12 @@
     function copiarAlPortapapeles() {
         mensaje.select();  // Selecciona el texto en el textarea
         document.execCommand("copy");  // Copia el texto seleccionado al portapapeles
-        alert("Mensaje copiado al portapapeles")
-        // imagenMuneco.style.display = "block"
+        alert("Mensaje copiado al portapapeles");
+        // imagenMuneco.style.display = "block";
     }
 
     textArea.addEventListener("input", (e) =>{
         imagenMuneco.style.display = "none";
         titleResult.textContent = "Capturando Mensaje";
-
-    })
+    });
+});
