@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Asignar las funciones a los botones
     btnEncriptar.addEventListener("click", btnEncriptarHandler);
     btnDesencriptar.addEventListener("click", btnDesencriptarHandler);
+    botonCopiar.addEventListener("click", copiarAlPortapapeles);
 
     function validarTexto(texto) {
         const regex = /^[a-z\s]+$/; // Solo letras minúsculas y espacios
@@ -75,8 +76,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function copiarAlPortapapeles() {
-        mensaje.select();  // Selecciona el texto en el textarea
-        document.execCommand("copy");  // Copia el texto seleccionado al portapapeles
+        // Selecciona el texto en el textarea de "mensaje"
+        mensaje.select();
+        mensaje.setSelectionRange(0, 99999); // Para dispositivos móviles
+
+        // Copia el texto al portapapeles
+        document.execCommand("copy");
+
+        // Alerta al usuario que el texto ha sido copiado
         alert("Mensaje copiado al portapapeles");
     }
 
