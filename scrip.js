@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", function() {
     const textArea = document.querySelector(".text-area");
     const mensaje = document.querySelector(".mensaje");
     const botonCopiar = document.querySelector(".copiar");
@@ -12,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     function encriptar(stringEncriptada){
-
         let matrix = [["e","enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
         stringEncriptada = stringEncriptada.toLowerCase(); 
         for (let i = 0 ; i < matrix.length; i++){
@@ -34,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return stringDesencriptada;
     }
 
-        function btnEncriptar(){
+    function btnEncriptar(){
         const texto = textArea.value.trim(); // Elimina los espacios en blanco al inicio y al final
         if (texto === "") {
             alert("Por favor, ingrese un texto para encriptar.");
@@ -67,16 +65,18 @@ document.addEventListener("DOMContentLoaded", function() {
         textArea.value = "";
         botonCopiar.classList.remove("btnOcultar"); // Mostrar botón copiar
     }
-    
+
+
+
     function copiarAlPortapapeles() {
         mensaje.select();  // Selecciona el texto en el textarea
         document.execCommand("copy");  // Copia el texto seleccionado al portapapeles
-        alert("Mensaje copiado al portapapeles");
-        // imagenMuneco.style.display = "block";
+        alert("Mensaje copiado al portapapeles")
+        // imagenMuneco.style.display = "block"
     }
 
     textArea.addEventListener("input", (e) =>{
         imagenMuneco.style.display = "none";
         titleResult.textContent = "Capturando Mensaje";
-    });
-});
+
+    })
