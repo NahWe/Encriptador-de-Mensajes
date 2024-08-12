@@ -10,7 +10,31 @@ document.addEventListener("DOMContentLoaded", function() {
         return regex.test(texto);
     }
 
-    function btnEncriptar(){
+
+    function encriptar(stringEncriptada){
+
+        let matrix = [["e","enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+        stringEncriptada = stringEncriptada.toLowerCase(); 
+        for (let i = 0 ; i < matrix.length; i++){
+            if (stringEncriptada.includes(matrix[i][0])){
+                stringEncriptada = stringEncriptada.replaceAll(matrix[i][0], matrix[i][1]);
+            }
+        }
+        return stringEncriptada;
+    }
+
+    function desencriptar(stringDesencriptada){
+        let matrix = [["e","enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+        stringDesencriptada = stringDesencriptada.toLowerCase(); 
+        for (let i = 0 ; i < matrix.length; i++){
+            if (stringDesencriptada.includes(matrix[i][1])){
+                stringDesencriptada = stringDesencriptada.replaceAll(matrix[i][1], matrix[i][0]);
+            }
+        }
+        return stringDesencriptada;
+    }
+
+        function btnEncriptar(){
         const texto = textArea.value.trim(); // Elimina los espacios en blanco al inicio y al final
         if (texto === "") {
             alert("Por favor, ingrese un texto para encriptar.");
@@ -43,29 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
         textArea.value = "";
         botonCopiar.classList.remove("btnOcultar"); // Mostrar botón copiar
     }
-
-    function encriptar(stringEncriptada){
-        let matrix = [["e","enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
-        stringEncriptada = stringEncriptada.toLowerCase(); 
-        for (let i = 0 ; i < matrix.length; i++){
-            if (stringEncriptada.includes(matrix[i][0])){
-                stringEncriptada = stringEncriptada.replaceAll(matrix[i][0], matrix[i][1]);
-            }
-        }
-        return stringEncriptada;
-    }
-
-    function desencriptar(stringDesencriptada){
-        let matrix = [["e","enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
-        stringDesencriptada = stringDesencriptada.toLowerCase(); 
-        for (let i = 0 ; i < matrix.length; i++){
-            if (stringDesencriptada.includes(matrix[i][1])){
-                stringDesencriptada = stringDesencriptada.replaceAll(matrix[i][1], matrix[i][0]);
-            }
-        }
-        return stringDesencriptada;
-    }
-
+    
     function copiarAlPortapapeles() {
         mensaje.select();  // Selecciona el texto en el textarea
         document.execCommand("copy");  // Copia el texto seleccionado al portapapeles
